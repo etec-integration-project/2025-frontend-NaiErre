@@ -1,0 +1,219 @@
+/* Header */
+header {
+  background-color: #4a4aff;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor principal */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 50px; /* Ancho final de la imagen */
+  height: 50px; /* Alto final de la imagen */
+  overflow: hidden; /* Recorta la imagen fuera de este área */
+  position: relative;
+  background-color: transparent; /* Asegura que el contenedor no tenga fondo */
+}
+.logo {
+  width: 100%; /* Asegura que la imagen ocupe el contenedor */
+  height: 100%;
+  transform: scale(1.6); /* Escala un 30% más grande */
+  transform-origin: center; /* Escala desde el centro */
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: multiply; /* Combina los colores para remover fondo blanco */
+  background-color: transparent;
+  object-fit: cover;
+}
+
+/* Links de navegación */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #e0e0ff;
+}
+
+/* Íconos */
+.icon-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Lupa y barra de búsqueda en la misma línea */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaciado entre la lupa y la barra */
+}
+
+.icon-link {
+  font-size: 1.4rem; /* Tamaño uniforme */
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link:hover {
+  color: #e0e0ff;
+}
+
+.cart-icon,
+.search-icon {
+  font-size: 1.4rem; /* Tamaño consistente */
+}
+
+/* Barra de búsqueda */
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  transition: width 0.5s ease; /* Animación progresiva */
+  overflow: hidden;
+  width: 0; /* Oculta inicialmente */
+}
+
+.search-bar-wrapper.show {
+  width: 250px; /* Ancho visible de la barra de búsqueda */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 2px; /* Estilo más cuadrado */
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #4a4aff;
+}
+
+/* Barra de búsqueda */
+.search-container {
+  align-items: center;
+  justify-content: center;
+}
+.search-bar-wrapper {
+  position: relative;
+  overflow: hidden; /* Oculta lo que está fuera del contenedor */
+  width: 0;
+  transition: width 0.5s ease; /* Animación progresiva */
+}
+
+.search-bar-wrapper.show {
+  width: 250px; /* Ancho visible de la barra de búsqueda */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #4a4aff;
+}
+
+/* Panel de cuenta */
+.account-container {
+  position: relative;
+}
+
+.account-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 200px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

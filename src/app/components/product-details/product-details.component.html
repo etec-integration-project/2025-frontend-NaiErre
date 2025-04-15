@@ -1,0 +1,39 @@
+<!-- product-details.component.html -->
+<div *ngIf="product; else noProduct" class="product-details-container">
+  <!-- Imagen del producto -->
+  <div class="product-image-container">
+    <img
+      [src]="'/' + product.imageUrl"
+      alt="{{ product.name }}"
+      class="product-image"
+    />
+  </div>
+
+  <!-- Información del producto -->
+  <div class="product-info">
+    <h2>{{ product.name }}</h2>
+    <p class="price">{{ product.price | currency }}</p>
+
+    <!-- Botones de acción -->
+    <div class="button-group">
+      <button (click)="addToCart()" class="add-to-cart">
+        Agregar al Carrito
+      </button>
+    </div>
+
+    <!-- Descripción y detalles -->
+    <p><span class="label">Marca:</span> {{ product.brand }}</p>
+    <p><span class="label">Modelo:</span> {{ product.model }}</p>
+    <p><span class="label">Talla:</span> {{ product.size }}</p>
+    <p><span class="label">Color:</span> {{ product.color }}</p>
+    <p><span class="label">Descripción:</span> {{ product.description }}</p>
+    <p><span class="label">Stock disponible:</span> {{ product.stock }}</p>
+
+    <!-- Mensaje de éxito -->
+    <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+  </div>
+</div>
+
+<ng-template #noProduct>
+  <p>Producto no encontrado o no disponible.</p>
+</ng-template>

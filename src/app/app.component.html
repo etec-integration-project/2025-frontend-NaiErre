@@ -1,0 +1,86 @@
+<header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a routerLink="/home" class="logo-container">
+      <img src="LogoEvoke3.jpeg" alt="Logo Evoke" class="logo" />
+    </a>
+
+    <!-- Links de navegación -->
+    <nav class="nav-links">
+      <a routerLink="/home" class="nav-link">Inicio</a>
+      <a routerLink="/products" class="nav-link">Tienda</a>
+      <a routerLink="/products" class="nav-link">Ofertas</a>
+      <a href="#footer" class="nav-link">Contacto</a>
+
+      <!-- Mostrar "Mi Cuenta" si el usuario ha iniciado sesión -->
+      <a class="nav-link" *ngIf="isLoggedIn" (click)="openUserModal()"
+        >Mi Cuenta</a
+      >
+
+      <!-- Mostrar "Crear Producto" solo si el usuario es admin -->
+      <a
+        routerLink="/upload-product"
+        class="nav-link admin-link"
+        *ngIf="isAdmin"
+      >
+        Crear Producto
+      </a>
+
+      <!-- Mostrar "Iniciar Sesión" si el usuario no está autenticado -->
+      <a routerLink="/auth" class="nav-link" *ngIf="!isLoggedIn">
+        Iniciar Sesión
+      </a>
+    </nav>
+
+    <!-- Íconos (Carrito y Lupa) -->
+    <div class="icon-links">
+      <a (click)="onCartButtonClick()" class="icon-link cart-link">
+        <fa-icon [icon]="faShoppingCart" class="cart-icon"></fa-icon>
+      </a>
+      <div class="search-container">
+        <div class="icon-wrapper">
+          <fa-icon
+            [icon]="faSearch"
+            class="icon-link search-icon"
+            (click)="toggleSearchBar()"
+          ></fa-icon>
+        </div>
+        <div class="search-bar-wrapper" [class.show]="isSearchBarVisible">
+          <input
+            type="text"
+            [(ngModel)]="searchQuery"
+            (keydown.enter)="onSearch()"
+            placeholder="Buscar productos, marcas..."
+            class="search-bar"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <div class="footer-content" id="footer">
+    <div class="footer-left">
+      <p>E-mail de contacto: evoke&#64;evokecorp.com</p>
+      <p>Número de teléfono: +54 (261)3865948</p>
+      <p>Artigas 236, Godoy Cruz, Mendoza, Argentina</p>
+    </div>
+    <div class="footer-center">
+      <h1 class="footer-title">EVOKE<span class="registered">&reg;</span></h1>
+    </div>
+    <div class="footer-right">
+      <p>Seguinos en nuestras redes</p>
+      <div class="social-buttons">
+        <img src="instagram-icon.png" alt="Instagram" />
+        <img src="facebook-icon.png" alt="Facebook" />
+        <img src="tiktok-icon.png" alt="TikTok" />
+        <img src="youtube-icon.png" alt="YouTube" />
+      </div>
+    </div>
+  </div>
+</footer>

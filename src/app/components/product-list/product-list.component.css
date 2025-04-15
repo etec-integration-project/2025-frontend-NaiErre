@@ -1,0 +1,220 @@
+/* Contenedor de la cuadrícula */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; /* Espaciado entre tarjetas */
+  margin: 20px;
+  padding: 0;
+}
+
+/* Tarjetas en la cuadrícula */
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0; /* Línea sutil */
+  border-radius: 8px; /* Bordes sutilmente redondeados */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+mat-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra al pasar el mouse */
+}
+
+/* Imagen en las tarjetas */
+.grid-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px; /* Bordes menos redondeados */
+  margin-bottom: 10px;
+  background-color: #f5f5f5; /* Fondo claro para imágenes */
+}
+
+/* Contenido dentro de las tarjetas */
+mat-card-content {
+  text-align: center;
+  color: #333;
+  padding: 0;
+}
+
+mat-card-content h5 {
+  margin: 10px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222; /* Texto más oscuro */
+}
+
+mat-card-content p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Botones en las tarjetas */
+mat-card-actions {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre botones */
+  padding: 0;
+}
+
+mat-card-actions button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #1e88e5; /* Azul moderno */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+mat-card-actions button:hover {
+  background-color: #1565c0; /* Azul más oscuro */
+  transform: translateY(-2px); /* Elevación sutil */
+}
+
+mat-card-actions .secondary-button {
+  background-color: transparent;
+  color: #1e88e5;
+  border: 1px solid #1e88e5;
+}
+
+mat-card-actions .secondary-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Vista en lista */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espaciado entre los elementos de la lista */
+  margin: 20px;
+  padding: 0;
+}
+
+/* Elementos de la lista */
+.product-list-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-list-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen en la lista */
+.product-list-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Detalles en la lista */
+.product-details {
+  flex-grow: 1;
+  color: #333;
+}
+
+.product-details h5 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.product-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Botones en la lista */
+.product-details .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.product-details button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.product-details button:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+}
+
+.product-details .secondary-button {
+  background-color: transparent;
+  color: #1e88e5;
+  border: 1px solid #1e88e5;
+}
+
+.product-details .secondary-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Barra de herramientas */
+.toolbar {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Botones de alternancia */
+.view-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #1e88e5;
+  background-color: #ffffff;
+  border: 1px solid #1e88e5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.toggle-button.active {
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+.toggle-button:hover {
+  background-color: #1565c0;
+  color: #ffffff;
+}
